@@ -7,8 +7,6 @@ var deltaSpawnTime = 1
 
 func _process(delta):
 	spawnTime = 500/get_viewport_rect().size.x * deltaSpawnTime
-	print(spawnTime)
-	print(get_viewport_rect().size.x)
 	time += delta
 	if time > spawnTime:
 		time = 0
