@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Images and Anims/In Game/asteroid.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/AsteroidDestroy.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 7.104
+height = 13.424
+
+[node name="Asteroid" type="RigidBody2D"]
+mode = 1
+gravity_scale = 0.0
+script = ExtResource( 2 )
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2( 1.99598, -2.12905 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="Body" type="Sprite" parent="."]
+texture = ExtResource( 1 )
