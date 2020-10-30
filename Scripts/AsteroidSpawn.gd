@@ -7,10 +7,13 @@ var deltaSpawnTime = 1
 
 func _process(delta):
 	spawnTime = 500/get_viewport_rect().size.x * deltaSpawnTime
+	print(spawnTime)
+	print(get_viewport_rect().size.x)
 	time += delta
 	if time > spawnTime:
 		time = 0
-		deltaSpawnTime *= 0.995
+		if spawnTime > 300/get_viewport_rect().size.x:
+			deltaSpawnTime *= 0.995
 		if has_node("Rocket"):
 			var asteroid = asteroidObj.instance()
 			add_child(asteroid)
