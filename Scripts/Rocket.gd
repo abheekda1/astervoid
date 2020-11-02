@@ -20,11 +20,11 @@ func _process(delta):
 		yield(get_tree().create_timer(1.5), "timeout")
 		queue_free()
 		get_tree().reload_current_scene()
-	if (Input.is_action_pressed("turn_left")):
+	if (InputEventScreenTouch.position <= get_viewport_rect().size.x/2):
 		if angle > -1.5:
 			rotate(-0.05)
 			angle -= 0.05
-	elif (Input.is_action_pressed("turn_right")):
+	elif (InputEventScreenTouch.position > get_viewport_rect().size.x/2):
 		if angle < 1.5:
 			rotate(0.05)
 			angle += 0.05

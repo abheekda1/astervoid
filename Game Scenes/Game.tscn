@@ -34,7 +34,7 @@ __meta__ = {
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.01, 0.01 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2( 89.4544, -100.794 )
 scale = Vector2( 5, 5 )
 texture = ExtResource( 3 )
