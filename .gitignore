@@ -357,3 +357,4 @@ Builds/
 
 # Don't include deleted files import folder
 .import/
+.iOS/

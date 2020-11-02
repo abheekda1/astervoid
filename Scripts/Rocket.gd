@@ -19,15 +19,16 @@ func _process(delta):
 		get_node("Collider").queue_free()
 		yield(get_tree().create_timer(1.5), "timeout")
 		queue_free()
-		get_tree().reload_current_scene()
-	if (InputEventScreenTouch.position <= get_viewport_rect().size.x/2):
-		if angle > -1.5:
-			rotate(-0.05)
-			angle -= 0.05
-	elif (InputEventScreenTouch.position > get_viewport_rect().size.x/2):
-		if angle < 1.5:
-			rotate(0.05)
-			angle += 0.05
-	else:
+		get_tree().reload_current_scene()	
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		if (get_viewport().get_mouse_position().x <= get_viewport_rect().size.x/2):
+			if angle > -1.5:
+				rotate(-0.05)
+				angle -= 0.05
+		elif (get_viewport().get_mouse_position().x > get_viewport_rect().size.x/2):
+			if angle < 1.5:
+				rotate(0.05)
+				angle += 0.05
+	else:	
 		rotate(-angle/25)
 		angle -= angle/25
