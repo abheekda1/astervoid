@@ -49,6 +49,5 @@ shape = SubResource( 1 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 7 )
 animation = "Spin"
-frame = 2
 playing = true
 [connection signal="body_entered" from="." to="." method="_on_Coin_body_entered"]
