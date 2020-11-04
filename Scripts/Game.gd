@@ -8,6 +8,7 @@ var deltaSpawnTime = 1
 var asteroidSpawnRepeat = 0
 var hiscore = 0
 var numOfCoins = 0
+onready var rocketNode = get_node("Rocket")
 
 func load_game():
 	var save_game = File.new()
@@ -16,13 +17,17 @@ func load_game():
 	save_game.open("user://savegame.save", File.READ)
 	while save_game.get_position() < save_game.get_len():
 		var data = parse_json(save_game.get_line())
-		var hiscore = data["hiscore"]
-		var numOfCoins = data["numOfCoins"]
+		hiscore = data["hiscore"]
+		numOfCoins = data["numOfCoins"]
+		
+func _ready():
+	load_game()
 
 func _process(delta):
+	if rocketNode.collided:
+		save_data()
 	spawnTime = 500/get_viewport_rect().size.x * deltaSpawnTime
 	time += delta
-	#print (numOfCoins)
 	if time > spawnTime:
 		asteroidSpawnRepeat += 1
 		time = 0

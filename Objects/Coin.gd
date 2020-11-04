@@ -1,7 +1,9 @@
 extends Area2D
 
+onready var gameNode = get_node("/root/Game")
+
 func _on_Coin_body_entered(body):
 	if body.name == "Rocket":
-		var numOfCoins = get_parent().get("numOfCoins")
-		numOfCoins += 1
+		gameNode.numOfCoins += 1
 		queue_free()
+		

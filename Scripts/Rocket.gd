@@ -4,16 +4,16 @@ var angle = 0
 var difficulty
 var deltaDifficulty = 0
 var explosionObj = load("res://Objects/Explosion.tscn")
+var collided = false
 
 func _process(delta):
 	difficulty = 600 + deltaDifficulty
 	difficulty += 0.0005
 	var collision = move_and_collide(Vector2(difficulty * sin(angle) * delta, -difficulty * cos(angle) * delta))
 	if collision:
+		collided = true
 		hide()
-		#scale = Vector2(0.01, 0.01)
 		var explosion = explosionObj.instance()
-		#add_child(explosion)
 		get_parent().add_child(explosion)
 		explosion.position = position
 		get_node("Collider").queue_free()

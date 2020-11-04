@@ -15,20 +15,22 @@ position = Vector2( 512, 300 )
 scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
-[node name="Camera2D" type="Camera2D" parent="Rocket"]
-offset = Vector2( 0, -220 )
-current = true
-smoothing_enabled = true
-
-[node name="Coins" type="Label" parent="Rocket/Camera2D"]
-margin_left = 166.0
-margin_top = -254.0
-margin_right = 250.0
-margin_bottom = -239.0
+[node name="Coins" type="Label" parent="Rocket"]
+margin_left = -41.9442
+margin_top = -56.8347
+margin_right = 42.0558
+margin_bottom = -41.8347
+align = 1
+valign = 1
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Camera2D" type="Camera2D" parent="Rocket"]
+offset = Vector2( 0, -220 )
+current = true
+smoothing_enabled = true
 
 [node name="Score" type="Label" parent="Rocket"]
 margin_left = 13.0
@@ -46,7 +48,6 @@ __meta__ = {
 motion_scale = Vector2( 0.01, 0.01 )
 
 [node name="Background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-visible = false
 position = Vector2( 89.4544, -100.794 )
 scale = Vector2( 5, 5 )
 texture = ExtResource( 3 )

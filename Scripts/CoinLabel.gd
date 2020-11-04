@@ -1,5 +1,6 @@
 extends Label
 
+onready var gameNode = get_node("/root/Game")
+
 func _process(delta):
-	var coins = str(get_parent().get_parent().get_parent().get("numOfCoins"))
-	text = coins
+	text = str(gameNode.numOfCoins)
