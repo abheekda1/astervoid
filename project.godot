@@ -17,9 +17,14 @@ _global_script_class_icons={
 
 config/name="SpacEscape"
 config/description="Simple game based on avoiding asteroids while controlling a rocket."
-run/main_scene="res://Game Scenes/Game.tscn"
+run/main_scene="res://Game Scenes/MainMenu.tscn"
 boot_splash/image="res://Images and Anims/Other/logo.png"
 config/icon="res://Images and Anims/Other/icon.png"
+
+[display]
+
+window/size/width=828
+window/size/height=1792
 
 [input]
 
