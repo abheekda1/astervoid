@@ -79,7 +79,6 @@ __meta__ = {
 position = Vector2( -8.0022, -34.2137 )
 scale = Vector2( 0.401688, 0.401688 )
 frames = SubResource( 6 )
-frame = 4
 playing = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
