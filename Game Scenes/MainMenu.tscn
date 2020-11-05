@@ -15,8 +15,10 @@ size = 100
 font_data = ExtResource( 5 )
 
 [node name="MarginContainer" type="MarginContainer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.906
+anchor_bottom = 0.744
+margin_right = -0.167969
+margin_bottom = 0.752075
 custom_constants/margin_right = 120
 custom_constants/margin_top = 80
 custom_constants/margin_left = 120
@@ -26,11 +28,12 @@ __meta__ = {
 }
 
 [node name="Rocket" parent="." instance=ExtResource( 2 )]
-position = Vector2( 416, 760 )
-scale = Vector2( 15, 15 )
+position = Vector2( 375, 600 )
+scale = Vector2( 10, 10 )
 
 [node name="Text Container" type="Node2D" parent="."]
-position = Vector2( 414, 896 )
+position = Vector2( 375, 700 )
+scale = Vector2( 0.7, 0.7 )
 script = ExtResource( 1 )
 
 [node name="AsteroidDodge" type="Label" parent="Text Container"]
@@ -62,7 +65,7 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 344.221, 738.579 )
+position = Vector2( 339.761, 738.579 )
 scale = Vector2( 4.19527, 4.19527 )
 z_index = -1
 texture = ExtResource( 3 )
