@@ -5,6 +5,8 @@ var difficulty
 var deltaDifficulty = 0
 var explosionObj = load("res://Objects/Explosion.tscn")
 var collided = false
+var isScreenPressed = false
+var screenPressLocation = get_viewport().get_rect().size/2
 onready var gameNode = get_node("/root/Game")
 
 func _process(delta):
@@ -26,15 +28,24 @@ func _process(delta):
 		yield(get_tree().create_timer(1.5), "timeout")
 		queue_free()
 		get_tree().change_scene("res://Game Scenes/MainMenu.tscn")
-	if Input.is_mouse_button_pressed(BUTTON_LEFT):
-		if (get_viewport().get_mouse_position().x <= get_viewport_rect().size.x/2):
+	if isScreenPressed:
+		print (true);
+		if (screenPressLocation <= get_viewport_rect().size.x/2):
 			if angle > -1.5:
 				rotate(-0.05)
 				angle -= 0.05
-		elif (get_viewport().get_mouse_position().x > get_viewport_rect().size.x/2):
+		elif (screenPressLocation > get_viewport_rect().size.x/2):
 			if angle < 1.5:
 				rotate(0.05)
 				angle += 0.05
 	else:	
 		rotate(-angle/25)
 		angle -= angle/25
+
+func _input(event):
+	if event is InputEventScreenTouch:
+		if event.pressed == true:
+			isScreenPressed = true
+			screenPressLocation = event.position.x
+		if event.pressed == false:
+			isScreenPressed = false
